@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Administrator Dashboard</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="head.css">
+   
+    <script src="theme-switch.js" defer></script>
+
+<style>
+   
+.courses li .names1 .kid-name,
+.courses li .names2 .kid-name,
+.courses li .names3 .kid-name,
+.courses li .names4 .kid-name,
+.courses li .names5 .kid-name,
+.courses li .names6 .kid-name,
+.courses li .names7 .kid-name,
+.courses li .names8 .kid-name,
+.courses li .names9 .kid-name {
+    display: none;
+}
+
+
+.courses li .names1 .kid-name.visible,
+.courses li .names2 .kid-name.visible,
+.courses li .names3 .kid-name.visible,
+.courses li .names4 .kid-name.visible,
+.courses li .names5 .kid-name.visible,
+.courses li .names6 .kid-name.visible,
+.courses li .names7 .kid-name.visible,
+.courses li .names8 .kid-name.visible,
+.courses li .names9 .kid-name.visible {
+    display: inline-block;
+}
+
+
+.names1 li.kid-name.hidden,
+.names2 li.kid-name.hidden,
+.names3 li.kid-name.hidden,
+.names4 li.kid-name.hidden,
+.names5 li.kid-name.hidden,
+.names6 li.kid-name.hidden,
+.names7 li.kid-name.hidden,
+.names8 li.kid-name.hidden,
+.names9 li.kid-name.hidden {
+    display: none;
+}
+
+</style>
+  
+</head>
+<body> 
+
+    <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const loadmoreButtons = document.querySelectorAll('.load-more');
+
+        loadmoreButtons.forEach((loadmore, index) => {
+            let currentitems = 3;
+
+            loadmore.addEventListener('click', function (e) {
+                const elementList = [...document.querySelectorAll(`.names${index + 1} li`)];
+                loadmore.classList.add('show-loader');
+
+                for (let i = currentitems; i < currentitems + 3; i++) {
+                    setTimeout(function () {
+                        loadmore.classList.remove('show-loader');
+                        if (elementList[i]) {
+                            elementList[i].style.display = 'flex';
+                        }
+                    }, 300 * (i - currentitems + 1));
+                }
+
+                currentitems += 3;
+
+                // Hide the "Load More" button if there are no more items
+                if (currentitems >= elementList.length) {
+                    loadmore.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+
+
+    <header>
+        <a class="logo">Code<span>Crusher</span></a>
+        <nav class="navigation">
+            <a href="index.html" accesskey="h">Home </a>
+            <a href="Course.html" accesskey="c">Course </a>
+            <a href="TutorsPage.html" accesskey="t">Tutors </a>
+            <a href="test.html" accesskey="a">Administrators </a>
+            <a href="example.html" accesskey="p">Parent </a>
+        </nav>
+    </header>
+	 
+<div class="breadcrumbs">
+    <a href="index.html">Home</a> &gt; &gt;
+    <a href="test.html">Administrator </a>
+</div>
+
+
+
+
+<div id="childInfoDisplay"></div>
+<main>
+
+
+
+    <br>
+    <h1>Administrator</h1>
+   <p id="currentWeekDate"></p>
+
+
+<div class= "list-of-Crushers">
+    <h2>Our Crushers</h2>
+    <ul class = "our-Crushers">
+        <li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		 Ahmad ali </li>
+        <li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Norah nasser</li>
+         <li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		Waleed khaild</li>
+        <li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Reema Mohamed</li>
+         <li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		Nasser yousef</li>
+        <li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Arwa saad</li>
+		<li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Maha naif</li>
+       <li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Abeer zyad</li>
+         <li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		Faisl yasser</li>
+		 <li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		Yusef amjad</li>
+         <li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		Ali Mohamed</li>
+        <li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Shouq sultan</li>
+		<li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Lina bader</li>
+        <li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Reman salman </li>
+         <li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		Mohammad mubark</li>  
+		<li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Rana sultan</li>
+        <li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Lama mansour</li>
+        <li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Jod satam</li>
+        <li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		Naif hashem</li>
+         <li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		Nawaf hatem</li>
+		<li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		Fahad ali</li>
+         <li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		Salman nawaf</li>
+        <li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Khloud ahmad</li>
+		<li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Layan yousef</li>
+         <li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		ibrahim nasser</li>
+        <li> <div class = "imgkisd" > <img src="Images/girl.png" alt= "girl"> </div>
+		Njood sultan</li>
+		 <li> <div class = "imgkisd" > <img src="Images/boy.png" alt= "boy"> </div>
+		Rayan saad</li>
+    </ul>
+</div>
+	<br> <br>
+	<div class = "Courses-info">
+
+    <h2>Courses </h2> 
+    <ul class="courses">
+        <li>
+            <div class="img"> <img src="Images/course1.png" alt="Introduction of Java"> </div>
+            Course name :Introduction of Java
+            <ul>
+                <li> Tutor name: Amal abdullah  </li>
+
+
+                <li>
+                  
+
+                    Crushers rigested:
+                    <ul class="names1">
+                        <li >Njood sultan</li>
+                        <li >Jod satam</li>
+                        <li >Ali mohamed</li>
+                        <li class="kid-name hidden">Faisl yasser</li>
+                        <li class="kid-name hidden">Abeer zyad</li>
+                        
+                        <li><a  class="load-more">More</a></li> 
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="img"> <img src="Images/course3.png" alt="Scratch"> </div>
+            Course name : Scratch
+            <ul>
+                <li>Tutor name: Najwa hamad</li>
+                <li>
+                    Crushers rigested:
+                    <ul class="names2">
+                        <li>Ahmad ali</li>
+                        <li>Norah nasser</li>
+                        <li>Reema mohamed</li>
+                        <li class="kid-name hidden">Arwa saad</li>
+                        <li class="kid-name hidden"> shouq sultan</li>
+                        <li><a  class="load-more">More</a></li> <!-- Inactive "More" link -->
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="img"> <img src="Images/course2.png" alt="Python"> </div>
+            Course name : Python
+            <ul>
+                <li>Tutor name: Mona khaled </li>
+                <li>
+                    Crushers rigested:
+                    <ul class="names3">
+                        <li>Yusef amjad</li>
+                        <li>Waleed khaild</li>
+                        <li>Rana sultan</li>
+                        <li class="kid-name hidden">Lama mansour</li>
+                        <li class="kid-name hidden">Maha naif</li>
+                        <li><a  class="load-more">More</a></li> <!-- Inactive "More" link -->
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="img"> <img src="Images/course4.png" alt="HTML"> </div>
+            Course name : HTML
+            <ul>
+                <li>Tutor name: Fahad omar </li>
+                <li>
+                    Crushers rigested:
+                    <ul class="names4">
+                        <li>Fahad ali</li>
+                        <li>Layan yousef</li>
+                        <li>Lina bader</li>
+                        <li class="kid-name hidden">Nawaf hatem</li>
+                        <li class="kid-name hidden">Rayan saad</li>
+                        <li><a class="load-more">More</a></li> <!-- Inactive "More" link -->
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="img"> <img src="Images/course6.png" alt="Robotics"> </div>
+            Course name : Robotics
+            <ul>
+                <li>Tutor name: Sami ahmed </li>
+                <li>
+                    Crushers rigested:
+                    <ul class="names5">
+                        <li>Naif hashem</li>
+                        <li>Reman salman</li>
+                        <li>Mohammad mubark</li>
+                        <li class="kid-name hidden">shouq sultan</li>
+                        <li class="kid-name hidden">Abeer zyad</li>
+                        <li><a  class="load-more">More</a></li> <!-- Inactive "More" link -->
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="img"> <img src="Images/course5.png" alt="Machine learning"> </div>
+            Course name : Machine learning
+            <ul>
+                <li>Tutor name: Hind saleh</li>
+                <li>
+                    Crushers rigested:
+                    <ul class="names6">
+                        <li>Arwa saad</li>
+                        <li>Yusef amjad</li>
+                        <li>Khloud ahmad</li>
+                        <li class="kid-name hidden">ibrahim nasser</li>
+                        <li class="kid-name hidden">Reema mohamed</li>
+                        <li><a  class="load-more">More</a></li> <!-- Inactive "More" link -->
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="img"> <img src="Images/Course7.png" alt="Machine learning"> </div>
+            Course name : SQL
+            <ul>
+                <li>Tutor name: Hind Saleh</li>
+                <li>
+                    Crushers rigested:
+                    <ul class="names7">
+                        <li>Arwa saad</li>
+                        <li>Yusef amjad</li>
+                        <li>Khloud ahmad</li>
+                        <li class="kid-name hidden">ibrahim nasser</li>
+                        <li class="kid-name hidden">Reema mohamed</li>
+                        <li><a class="load-more">More</a></li> <!-- Inactive "More" link -->
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <div class="img"> <img src="Images/Course8.png" alt="Machine learning"> </div>
+            Course name : CSS
+            <ul>
+                <li>Tutor name: Sami Ahmed</li>
+                <li>
+                    Crushers rigested:
+                    <ul class="names8">
+                        <li>Arwa saad</li>
+                        <li>Yusef amjad</li>
+                        <li>Khloud ahmad</li>
+                        <li class="kid-name hidden">ibrahim nasser</li>
+                        <li class="kid-name hidden">Reema mohamed</li>
+                        <li><a  class="load-more">More</a></li> <!-- Inactive "More" link -->
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="img"> <img src="Images/course9.png" alt="Machine learning"> </div>
+            Course name : Java Script
+            <ul>
+                <li>Tutor name: Mona Khalid</li>
+                <li>
+                    Crushers rigested:
+                    <ul class="names9">
+                        <li>Arwa saad</li>
+                        <li>Yusef amjad</li>
+                        <li>Khloud ahmad</li>
+                        <li class="kid-name hidden">ibrahim nasser</li>
+                        <li class="kid-name hidden">Reema mohamed</li>
+                        <li><a class="load-more" >More</a></li> <!-- Inactive "More" link -->
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+	
+	</div>
+	<br> <br>
+<div class = "Tutors-info">
+    <h2>Tutors</h2>
+    <ul class = "Tutors">
+        <li> <div class = "img" > <img src="Images/tutor1.png" alt= "tutor1"> </div>
+            <a href="sceduleamal.html">Tutor Name : Amal abdullah</a>
+            <ul>
+                <li>Courses Taught: 
+                    <ul>
+                        <li>Introduction of Java</li>
+                        <li>HTML</li>
+						<li> Python</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li> <div class = "img" > <img src="Images/tutor2.png" alt= "tutor"> </div>
+            <a href="schedulenajwa.html">Tutor Name : Najwa hamed</a>
+            <ul>
+                <li>Courses Taught:
+                    <ul>
+                        <li>Scratch</li>
+                        <li>Robotics</li>
+						<li>Machine learning</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+		        <li> <div class = "img" > <img src="Images/tutor3.png" alt= "tutor"> </div>
+            <a href="sceduleamal.html">Tutor Name : Mona khaled</a>
+            <ul>
+                <li>Courses Taught:
+                    <ul>
+                        <li>Python</li>
+                        <li> Introduction of Java </li>
+                        <li>Java Script</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+		 <li> <div class = "img" > <img src="Images/tutor4.png" alt= "tutor"> </div>
+            <a href="sceduleamal.html">Tutor Name : Fahad omar</a>
+            <ul>
+                <li>Courses Taught:
+                    <ul>
+                        <li>HTML</li>
+                        <li>Robotics</li>
+						<li> Introduction of Java </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+		        <li>  <div class = "img" > <img src="Images/tutor5.png" alt= "tutor"> </div>
+            <a href="sceduleamal.html">Tutor Name : Sami ahmed </a>
+            <ul>
+                <li>Courses Taught:
+                    <ul>
+                        <li>Robotics</li>
+                        <li>Machine learning</li>
+                        <li>CSS</li>
+
+                    </ul>
+                </li>
+            </ul>
+        </li>
+		        <li> <div class = "img" > <img src="Images/tutor6.png" alt= "tutor"> </div>
+            <a href="sceduleamal.html">Tutor Name : Hind saleh </a>
+            <ul>
+                <li>Courses Taught:
+                    <ul>
+                        <li>Machine learning</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+	</div>
+
+	</main>
+	<script>
+    function getFormattedWeekStartDate() {
+        var currentDate = new Date();
+        var currentDay = currentDate.getDay(); // 0 is Sunday, 1 is Monday, etc.
+        var daysUntilSunday = (currentDay === 0) ? 0 : 7 - currentDay;
+        var sundayDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + daysUntilSunday);
+
+        // Format the date as "Sunday DD Month"
+        var options = { weekday: 'long', day: 'numeric', month: 'long' };
+        var formattedDate = sundayDate.toLocaleDateString('en-US', options);
+
+        return formattedDate;
+    }
+
+    // Update the content of the 'currentWeekDate' paragraph
+    document.getElementById('currentWeekDate').innerHTML = 'Date: ' + getFormattedWeekStartDate();
+
+</script>
+
+
+
+   <footer class="footer-distributed">
+
+      <div class="footer-left">
+          <h3>Code<span>Crusher</span></h3>
+
+          <p class="footer-links">
+            <a href="index.html">Home</a>
+            |
+            <a href="Course.html">course</a>
+            |
+            <a href="TutorsPage.html">Tutors</a>
+            |
+            <a href="test.html">Administrators</a>
+            |
+            <a href="example.html">Parent</a>
+        </p>
+
+          <p class="footer-company-name">Copyright © 2023 <strong>CodeCrushr</strong> All rights reserved. privacy pollicy </p>
+      </div>
+
+      <div class="footer-center">
+          <div>
+              <i class="fa fa-map-marker"></i>
+              <p><span>Saudi Arabia</span>
+                  Riyadh</p>
+          </div>
+
+          <div>
+              <i class="fa fa-phone"></i>
+              <p>+01 01112345</p>
+          </div>
+          <div>
+              <i class="fa fa-envelope"></i>
+              <p><a href="mailto:codecrusher@gmail.com">CodeCrusher@gmail.com</a></p>
+          </div>
+      </div>
+      <div class="footer-right">
+         
+        <p class="footer-subscribe">
+           <span>Subscribe to our News</span> </p>
+           <form>
+              <input id="email" type="email" placeholder="Enter your email">
+              <button id="fbutton" type="submit">Join</button>
+            </form>
+          <div class="footer-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+  </footer>
+   
+</body>
+</html>
